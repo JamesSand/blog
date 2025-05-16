@@ -13,24 +13,7 @@
       <link>http://localhost:1313/posts/my-first-post/</link>
       <pubDate>Thu, 15 May 2025 16:36:51 +0800</pubDate>
       <guid>http://localhost:1313/posts/my-first-post/</guid>
-      <description>&lt;p&gt;记录一下搭建过程，方便以后的自己能够简单复现&lt;/p&gt;
-&lt;p&gt;这次的技术选型是 hugo + PaperMode theme.&lt;/p&gt;
-&lt;h3 id=&#34;install-hugo&#34;&gt;Install Hugo&lt;/h3&gt;
-&lt;p&gt;直接用 winget 就能很快装好&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# install&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;winget install Hugo.Hugo.Extended
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# uninstall&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;winget uninstall --name &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Hugo (Extended)&amp;#34;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;papermode-theme&#34;&gt;PaperMode theme&lt;/h3&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# download theme as git submodule
-git submodule add https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod
-
-# add to toml, if already have, need to change
-echo &amp;#34;theme = &amp;#39;PaperMod&amp;#39;&amp;#34; &amp;gt;&amp;gt; hugo.toml
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;deploy-to-github&#34;&gt;Deploy to github&lt;/h3&gt;
-&lt;p&gt;按照 hugo 的教程来就可以 &lt;a href=&#34;https://gohugo.io/host-and-deploy/host-on-github-pages&#34;&gt;link&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;注意 action 的触发是基于 main branch 的 push。有时候 main branch 的名字会变成 master branch。需要稍微改一下官方文档里边的 yaml 才能正常触发。&lt;/p&gt;</description>
+      <description>记录一下搭建过程吧</description>
     </item>
   </channel>
 </rss>

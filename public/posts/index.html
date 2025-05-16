@@ -116,8 +116,12 @@
   </header>
   <div class="entry-content">
     <p>记录一下搭建过程，方便以后的自己能够简单复现
-这次的技术选型是
-</p>
+这次的技术选型是 hugo &#43; PaperMode theme.
+Install Hugo 直接用 winget 就能很快装好
+# install winget install Hugo.Hugo.Extended # uninstall winget uninstall --name &#34;Hugo (Extended)&#34; PaperMode theme # download theme as git submodule git submodule add https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod # add to toml, if already have, need to change echo &#34;theme = &#39;PaperMod&#39;&#34; &gt;&gt; hugo.toml 创建一个新的 post
+hugo new posts/my-first-post.md Deploy to github 在 push 之前记得 hugo serve
+如果从零开始的话，需要按照 hugo 的教程 link 配置一下 github action
+...</p>
   </div>
   <footer class="entry-footer"><span title='2025-05-15 16:36:51 +0800 CST'>May 15, 2025</span></footer>
   <a class="entry-link" aria-label="post link to 时隔多年，我又搭建了一个 blog post" href="http://localhost:1313/posts/my-first-post/"></a>
