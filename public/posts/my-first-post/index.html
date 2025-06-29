@@ -113,7 +113,10 @@
 
 </div>
   </header> 
-  <div class="post-content"><p>记录一下搭建过程，方便以后的自己能够简单复现</p>
+  <div class="post-content"><p>创建一个新的 post</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo new content content/posts/my-first-post.md
+</span></span></code></pre></div><p>在 push 之前记得 <code>hugo serve</code></p>
+<p>记录一下搭建过程，方便以后的自己能够简单复现</p>
 <p>这次的技术选型是 hugo + PaperMode theme.</p>
 <h3 id="install-hugo">Install Hugo<a hidden class="anchor" aria-hidden="true" href="#install-hugo">#</a></h3>
 <p>直接用 winget 就能很快装好</p>
@@ -128,11 +131,7 @@ git submodule add https://github.com/adityatelange/hugo-PaperMod.git themes/Pape
 
 # add to toml, if already have, need to change
 echo &#34;theme = &#39;PaperMod&#39;&#34; &gt;&gt; hugo.toml
-</code></pre><p>创建一个新的 post</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hugo new content content/posts/my-first-post.md
-</span></span></code></pre></div><h3 id="deploy-to-github">Deploy to github<a hidden class="anchor" aria-hidden="true" href="#deploy-to-github">#</a></h3>
-<p>在 push 之前记得 <code>hugo serve</code></p>
-<p>如果从零开始的话，需要按照 hugo 的教程 <a href="https://gohugo.io/host-and-deploy/host-on-github-pages">link</a> 配置一下 github action</p>
+</code></pre><p>如果从零开始的话，需要按照 hugo 的教程 <a href="https://gohugo.io/host-and-deploy/host-on-github-pages">link</a> 配置一下 github action</p>
 <p>注意 action 的触发是基于 main branch 的 push。有时候 main branch 的名字会变成 master branch。需要稍微改一下官方文档里边的 yaml 才能正常触发。</p>
 
 

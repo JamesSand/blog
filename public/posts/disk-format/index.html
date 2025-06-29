@@ -5,11 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Posts | JamesSand&#39;s Blog</title>
+<title>Disk Format | JamesSand&#39;s Blog</title>
 <meta name="keywords" content="">
-<meta name="description" content="Posts - JamesSand&#39;s Blog">
+<meta name="description" content="关于硬盘的文件系统">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/posts/">
+<link rel="canonical" href="http://localhost:1313/posts/disk-format/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.6da9a63d25a9608bca2f7f907a030e887a7dd3c3f3918e4cc113129361414bda.css" integrity="sha256-bammPSWpYIvKL3&#43;QegMOiHp908PzkY5MwRMSk2FBS9o=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
@@ -18,8 +18,7 @@
 <link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/posts/index.xml">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/disk-format/">
 <noscript>
     <style>
         #theme-toggle,
@@ -59,7 +58,7 @@
 </noscript>
 </head>
 
-<body class="list" id="top">
+<body class="" id="top">
 <script>
     if (localStorage.getItem("pref-theme") === "dark") {
         document.body.classList.add('dark');
@@ -102,35 +101,41 @@
         </ul>
     </nav>
 </header>
-<main class="main"> 
-<header class="page-header">
-  <h1>
-    Posts
-  </h1>
-</header>
+<main class="main">
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Disk Format
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>关于硬盘的文件系统</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-06-29 15:03:53 +0800 CST'>June 29, 2025</span></footer>
-  <a class="entry-link" aria-label="post link to Disk Format" href="http://localhost:1313/posts/disk-format/"></a>
-</article>
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Disk Format
+    </h1>
+    <div class="post-meta"><span title='2025-06-29 15:03:53 +0800 CST'>June 29, 2025</span>
 
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">时隔多年，我又搭建了一个 blog post
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>记录一下搭建过程吧</p>
+</div>
+  </header> 
+  <div class="post-content"><p>在备份 windows 电脑的时候遇到了一个问题，windows 的硬盘镜像没法写到 exFAT 的移动硬盘里边。试过了 minitool，但是 minitool 也没有办法给 exFAT 的硬盘划分出一个 NTFS 的分区。于是乎了解了一下 exFAT 和 NTFS 的区别。</p>
+<p>NTFS</p>
+<ul>
+<li>是 windows 的默认文件系统</li>
+<li>支持以下功能：文件权限，日志记录，文件加密，磁盘配额</li>
+<li>适用于高可靠性，安全性和大量小文件的场景</li>
+<li>Mac 没法直接读取</li>
+</ul>
+<p>exFAT</p>
+<ul>
+<li>为 U 盘设计的轻量级文件系统</li>
+<li>兼容性强，Mac 和 Windows 都能读取</li>
+<li>不能划分新分区</li>
+</ul>
+<p>如果是 Mac 的话，它支持 APFS 文件系统。但是同理 APFS 不能被 Windows 直接读取</p>
+
+
   </div>
-  <footer class="entry-footer"><span title='2025-05-15 16:36:51 +0800 CST'>May 15, 2025</span></footer>
-  <a class="entry-link" aria-label="post link to 时隔多年，我又搭建了一个 blog post" href="http://localhost:1313/posts/my-first-post/"></a>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
 </article>
     </main>
     

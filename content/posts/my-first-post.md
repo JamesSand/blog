@@ -5,6 +5,14 @@ title = '时隔多年，我又搭建了一个 blog post'
 summary = '记录一下搭建过程吧'
 +++
 
+创建一个新的 post
+
+``` bash
+hugo new content content/posts/my-first-post.md
+```
+
+在 push 之前记得 `hugo serve`
+
 记录一下搭建过程，方便以后的自己能够简单复现
 
 这次的技术选型是 hugo + PaperMode theme. 
@@ -30,17 +38,6 @@ git submodule add https://github.com/adityatelange/hugo-PaperMod.git themes/Pape
 # add to toml, if already have, need to change
 echo "theme = 'PaperMod'" >> hugo.toml
 ```
-
-创建一个新的 post
-
-``` bash
-hugo new content content/posts/my-first-post.md
-```
-
-
-### Deploy to github
-
-在 push 之前记得 `hugo serve`
 
 如果从零开始的话，需要按照 hugo 的教程 [link](https://gohugo.io/host-and-deploy/host-on-github-pages) 配置一下 github action
 
