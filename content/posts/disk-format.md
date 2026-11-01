@@ -3,6 +3,7 @@ date = '2025-06-29T15:03:53+08:00'
 draft = false
 title = 'Disk Format'
 summary = '关于硬盘的文件系统'
+tags = ['Storage']
 +++
 
 在备份 windows 电脑的时候遇到了一个问题，windows 的硬盘镜像没法写到 exFAT 的移动硬盘里边。试过了 minitool，但是 minitool 也没有办法给 exFAT 的硬盘划分出一个 NTFS 的分区。于是乎了解了一下 exFAT 和 NTFS 的区别。

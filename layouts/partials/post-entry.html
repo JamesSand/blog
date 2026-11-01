@@ -1,0 +1,8 @@
+<li class="blog-preview-entry">
+  <time class="blog-archive-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "01-02" }}</time>
+  {{ partial "lang-badge.html" . }}
+  <div class="blog-preview-body">
+    <h3 class="blog-preview-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+    <p class="blog-preview-excerpt">{{ .Summary | plainify }}</p>
+  </div>
+</li>

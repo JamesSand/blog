@@ -1,0 +1,10 @@
+{{- if gt .TotalPages 1 }}
+<nav class="blog-pagination" aria-label="Pagination">
+  {{- if .HasPrev }}
+  <a class="blog-pagination-step" href="{{ .Prev.URL }}"><span class="en">Previous</span><span class="zh">上一页</span></a>
+  {{- end }}
+  {{- if .HasNext }}
+  <a class="blog-pagination-step" href="{{ .Next.URL }}"><span class="en">Next</span><span class="zh">下一页</span></a>
+  {{- end }}
+</nav>
+{{- end -}}

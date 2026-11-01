@@ -3,6 +3,7 @@ date = '2025-05-15T16:36:51+08:00'
 draft = false
 title = '时隔多年，我又搭建了一个 blog post'
 summary = '记录一下搭建过程吧'
+tags = ['Hugo']
 +++
 
 创建一个新的 post

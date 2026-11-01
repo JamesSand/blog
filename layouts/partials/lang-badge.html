@@ -1,0 +1,5 @@
+{{- if findRE `\p{Han}` .Plain 1 -}}
+<span class="blog-lang blog-lang-zh">中</span>
+{{- else -}}
+<span class="blog-lang blog-lang-en">EN</span>
+{{- end -}}

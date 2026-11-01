@@ -1,0 +1,52 @@
+{{ define "outline" }}
+    <nav class="page-toc" aria-label="Page outline" data-heading-selector=".blog-post-body h2, .blog-post-body h3">
+      <div class="page-toc-handle" aria-hidden="true">
+        <span class="page-toc-handle-icon">☰</span>
+        <span class="page-toc-handle-label">Outline</span>
+      </div>
+      <div class="page-toc-panel">
+        <p class="page-toc-title"><span class="en">On this page</span><span class="zh">本页目录</span></p>
+        <ul class="page-toc-list"></ul>
+      </div>
+    </nav>
+{{ end }}
+
+{{ define "main" }}
+        <article class="blog-main blog-post">
+          <header class="blog-post-header">
+            <p class="blog-post-meta">
+              <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+              {{ partial "lang-badge.html" . }}
+              {{- with .GetTerms "tags" }}
+              <span class="blog-post-tag-line">
+                {{- range . }}
+                <a class="blog-post-tag-chip" href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>
+                {{- end }}
+              </span>
+              {{- end }}
+            </p>
+            <h1>{{ .Title }}</h1>
+          </header>
+          <div class="blog-post-body">
+            {{ .Content }}
+          </div>
+          {{- if or .PrevInSection .NextInSection }}
+          <footer class="blog-post-footer">
+            <nav class="blog-post-nav" aria-label="More posts">
+              {{- with .NextInSection }}
+              <a class="blog-post-nav-link" href="{{ .RelPermalink }}">
+                <span class="blog-post-nav-label"><span class="en">Newer</span><span class="zh">较新</span></span>
+                <span class="blog-post-nav-title">{{ .Title }}</span>
+              </a>
+              {{- end }}
+              {{- with .PrevInSection }}
+              <a class="blog-post-nav-link blog-post-nav-next" href="{{ .RelPermalink }}">
+                <span class="blog-post-nav-label"><span class="en">Older</span><span class="zh">较旧</span></span>
+                <span class="blog-post-nav-title">{{ .Title }}</span>
+              </a>
+              {{- end }}
+            </nav>
+          </footer>
+          {{- end }}
+        </article>
+{{ end }}

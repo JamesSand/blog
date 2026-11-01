@@ -1,0 +1,24 @@
+{{ define "main" }}
+        <section class="blog-main">
+          {{- if eq .Kind "taxonomy" }}
+          <header class="blog-header">
+            <p class="blog-percent"><span class="en">Tags</span><span class="zh">标签</span></p>
+            <h1><span class="en">{{ len .Pages }} tags in total.</span><span class="zh">共 {{ len .Pages }} 个标签。</span></h1>
+          </header>
+          <div class="blog-tag-cloud">
+            {{- range .Pages.ByTitle }}
+            <a class="blog-tag-chip" href="{{ .RelPermalink }}">{{ .LinkTitle }} <span class="blog-tag-count">{{ len .Pages }}</span></a>
+            {{- end }}
+          </div>
+          {{- else }}
+          {{- $paginator := .Paginate .Pages.ByDate.Reverse }}
+          <header class="blog-header">
+            <p class="blog-percent">{{ if eq .Kind "term" }}<span class="en">Tag</span><span class="zh">标签</span>{{ else }}<span class="en">Posts</span><span class="zh">文章</span>{{ end }}</p>
+            <h1>{{ .Title }}</h1>
+            <p class="blog-header-note"><span class="en">{{ len .Pages }} posts.</span><span class="zh">共 {{ len .Pages }} 篇文章。</span></p>
+          </header>
+          {{ partial "post-archive.html" $paginator.Pages }}
+          {{ partial "pagination.html" $paginator }}
+          {{- end }}
+        </section>
+{{ end }}

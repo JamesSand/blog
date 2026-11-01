@@ -1,0 +1,12 @@
+<div class="blog-archive">
+  {{- range .GroupByDate "2006" }}
+  <section class="blog-year-block">
+    <h2 class="blog-year">{{ .Key }}</h2>
+    <ul class="blog-preview-list">
+      {{- range .Pages }}
+      {{ partial "post-entry.html" . }}
+      {{- end }}
+    </ul>
+  </section>
+  {{- end }}
+</div>

@@ -1,0 +1,15 @@
+{{ define "main" }}
+        {{- $posts := where site.RegularPages "Section" "posts" }}
+        {{- $paginator := .Paginate $posts.ByDate.Reverse }}
+        {{- $first := add (mul (sub $paginator.PageNumber 1) $paginator.PagerSize) 1 }}
+        {{- $last := add $first (sub (len $paginator.Pages) 1) }}
+        <section class="blog-main">
+          <header class="blog-header">
+            <p class="blog-percent"><span class="en">Page</span><span class="zh">第</span> {{ $paginator.PageNumber }} / {{ $paginator.TotalPages }}<span class="zh"> 页</span></p>
+            <h1><span class="en">{{ len $posts }} posts in total. Keep on posting.</span><span class="zh">共 {{ len $posts }} 篇文章，继续写。</span></h1>
+            <p class="blog-header-note"><span class="en">Showing posts {{ $first }}–{{ $last }} of {{ len $posts }}.</span><span class="zh">当前显示第 {{ $first }}–{{ $last }} 篇，共 {{ len $posts }} 篇。</span></p>
+          </header>
+          {{ partial "post-archive.html" $paginator.Pages }}
+          {{ partial "pagination.html" $paginator }}
+        </section>
+{{ end }}
