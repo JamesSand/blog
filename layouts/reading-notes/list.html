@@ -1,0 +1,13 @@
+{{ define "main" }}
+        {{- $paginator := .Paginate .Pages.ByDate.Reverse }}
+        {{- $count := len .Pages }}
+        <section class="blog-main">
+          <header class="blog-header">
+            <p class="blog-percent"><span class="en">Reading Notes</span><span class="zh">论文笔记</span></p>
+            <h1><span class="en">{{ $count }} {{ if eq $count 1 }}paper{{ else }}papers{{ end }} read closely. Keep on reading.</span><span class="zh">共 {{ $count }} 篇论文笔记，继续读。</span></h1>
+            <p class="blog-header-note"><span class="en">Notes on papers I have read closely: the problem, the method, the results, and my takeaways.</span><span class="zh">我精读过的论文的笔记：问题、方法、实验结果和我的看法。</span></p>
+          </header>
+          {{ partial "post-archive.html" $paginator.Pages }}
+          {{ partial "pagination.html" $paginator }}
+        </section>
+{{ end }}

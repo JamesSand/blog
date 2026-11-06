@@ -12,6 +12,13 @@ title = "Zhizhou Sha's Blog"
   noClasses = true
   style = 'github-dark'
 
+# Leave $...$ and $$...$$ untouched so KaTeX can render them; pages opt in with `math = true`.
+[markup.goldmark.extensions.passthrough]
+  enable = true
+  [markup.goldmark.extensions.passthrough.delimiters]
+    block = [['$$', '$$']]
+    inline = [['$', '$']]
+
 [caches]
   [caches.images]
     dir = ':cacheDir/images'

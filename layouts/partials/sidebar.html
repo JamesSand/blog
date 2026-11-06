@@ -8,6 +8,11 @@
                 <strong>{{ len (where site.RegularPages "Section" "posts") }}</strong>
                 <span><span class="en">Posts</span><span class="zh">文章</span></span>
               </a>
+              {{- $notes := len (where site.RegularPages "Section" "reading-notes") }}
+              <a class="blog-stat" href="{{ "reading-notes/" | relURL }}">
+                <strong>{{ $notes }}</strong>
+                <span><span class="en">{{ if eq $notes 1 }}Paper{{ else }}Papers{{ end }}</span><span class="zh">论文</span></span>
+              </a>
               <a class="blog-stat" href="{{ "tags/" | relURL }}">
                 <strong>{{ len site.Taxonomies.tags }}</strong>
                 <span><span class="en">Tags</span><span class="zh">标签</span></span>
@@ -17,6 +22,10 @@
               <a href="{{ site.Home.RelPermalink }}"{{ if .IsHome }} aria-current="page"{{ end }}>
                 <span class="blog-nav-icon" aria-hidden="true"><svg width="18" height="18"><use href="#i-home"/></svg></span>
                 <span class="en">Main</span><span class="zh">首页</span>
+              </a>
+              <a href="{{ "reading-notes/" | relURL }}"{{ if eq .Section "reading-notes" }} aria-current="page"{{ end }}>
+                <span class="blog-nav-icon" aria-hidden="true"><svg width="18" height="18"><use href="#i-book"/></svg></span>
+                <span class="en">Reading Notes</span><span class="zh">论文笔记</span>
               </a>
               <a href="{{ "tags/" | relURL }}"{{ if eq .Kind "taxonomy" }} aria-current="page"{{ end }}>
                 <span class="blog-nav-icon" aria-hidden="true"><svg width="18" height="18"><use href="#i-tag"/></svg></span>

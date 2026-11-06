@@ -63,7 +63,7 @@
 
 .blog-stats {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 4px;
   padding: 14px 0;
   border-top: 1px solid var(--line-soft);
@@ -394,6 +394,39 @@
 .blog-post-tag-chip:hover {
   border-color: var(--accent);
   text-decoration: none;
+}
+
+.blog-venue {
+  display: inline-block;
+  padding: 1px 7px;
+  border: 1px solid #b7dfc5;
+  border-radius: 3px;
+  background: #ebf7ef;
+  color: #23714a;
+  font-family: var(--sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  vertical-align: 0.1em;
+  white-space: nowrap;
+}
+
+.blog-paper-info {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.blog-paper-title {
+  color: var(--ink);
+  font-style: italic;
+}
+
+.blog-post-body .katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 2px 0;
 }
 
 .blog-post-body {

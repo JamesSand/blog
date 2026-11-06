@@ -17,6 +17,9 @@
             <p class="blog-post-meta">
               <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
               {{ partial "lang-badge.html" . }}
+              {{- with .Params.paper }}{{ with .venue }}
+              <span class="blog-venue">{{ . }}</span>
+              {{- end }}{{ end }}
               {{- with .GetTerms "tags" }}
               <span class="blog-post-tag-line">
                 {{- range . }}
@@ -26,6 +29,15 @@
               {{- end }}
             </p>
             <h1>{{ .Title }}</h1>
+            {{- with .Params.paper }}
+            <p class="blog-paper-info">
+              {{- with .title }}<span class="blog-paper-title">{{ . }}</span><br>{{ end }}
+              {{- with .authors }}{{ . }}{{ end }}
+              {{- with .arxiv }} · <a href="{{ . }}" target="_blank" rel="noopener noreferrer">arXiv</a>{{ end }}
+              {{- with .version }} {{ . }}{{ end }}
+              {{- with .code }} · <a href="{{ . }}" target="_blank" rel="noopener noreferrer"><span class="en">Code</span><span class="zh">代码</span></a>{{ end }}
+            </p>
+            {{- end }}
           </header>
           <div class="blog-post-body">
             {{ .Content }}
